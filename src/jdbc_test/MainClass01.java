@@ -43,7 +43,7 @@ class DB{
 	//DB명령어 전송 객체
 	PreparedStatement ps;
 
-	//D명령어 후 결과 얻어오는 객체
+	//DB명령어 후 결과 얻어오는 객체
 	ResultSet rs;
 	
 	public DB() {	//공통으로 만들어진 로그인파일을 가져와서 사용
@@ -153,7 +153,7 @@ class DB{
 		try {
 			ps = con.prepareStatement(sql);	//쿼리문 실행
 			rs = ps.executeQuery();
-			if(rs.next()) {	//if문이 실행되면 객체값 실행안되면 null 값
+			if(rs.next()) {	//if문이 실행되면 객체가 있고 실행안되면 null 값
 				dto = new MemberDTO();
 				dto.setId(rs.getString("id"));
 				dto.setName(rs.getString("name"));
